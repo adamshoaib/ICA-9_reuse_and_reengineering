@@ -111,13 +111,13 @@ abstract public class CourseMenu extends JDialog
   void buttonChangeCourseActionPerformed(ActionEvent e)
   {
     bLogout=false;
-    hide();
+    setVisible(true);
   }
 
   void buttonlogoutActionPerformed(ActionEvent e)
   {
     bLogout=true;
-    hide();
+    setVisible(true);
   }
   boolean ifLogout()
   {

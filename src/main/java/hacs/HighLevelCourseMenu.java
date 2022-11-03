@@ -28,7 +28,6 @@ public class HighLevelCourseMenu extends CourseMenu {
 		ShowRadios();
 		ShowComboxes();
 		setVisible(true);
-		show();
 	}
 
 	void ShowAddButtons() {

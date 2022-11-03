@@ -108,7 +108,7 @@ public class Login extends JDialog {
 					LoginName = UserName;
 			}
 			if (LoginName != null) {
-				this.hide();
+				this.setVisible(true);
 			}
 		} catch (Exception ee) {
 			;

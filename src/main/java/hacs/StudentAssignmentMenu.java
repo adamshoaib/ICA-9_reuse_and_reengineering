@@ -111,9 +111,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		lAssignmentName.setText(theAssignment.AssName);
 		lDueDate.setText(theAssignment.DueDate.toString());
 		lSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
-
-		show();
-
+		setVisible(true);
 		if (boolSubmit == true) {
 			if (theSolution == null) {
 				theSolution = new Solution();
@@ -127,12 +125,12 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 	void bSubmitActionPerformed(ActionEvent e) {
 		boolSubmit = true;
-		hide();
+		setVisible(false);
 	}
 
 	void bCancelActionPerformed(ActionEvent e) {
 		boolSubmit = false;
-		hide();
+		setVisible(false);
 	}
 
 }

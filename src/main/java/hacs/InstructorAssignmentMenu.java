@@ -110,7 +110,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     tbDueDate.setText(theDateFormat.format(theAssignment.DueDate));
     tbSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName );
     refreshSolutionList();
-    show();
+    setVisible(true);
   }
 
   void buttonCloseActionPerformed(ActionEvent e)
@@ -122,7 +122,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
       theAssignment.DueDate=tempDateFormat.parse(tbDueDate.getText() );
     }catch (Exception ee){};
     theAssignment.SuggestSolution.SolutionFileName =tbSuggestedSolution.getText() ;
-    hide();
+    setVisible(false);
   }
 
   void buttonGradeActionPerformed(ActionEvent e)

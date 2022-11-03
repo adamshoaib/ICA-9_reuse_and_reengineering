@@ -84,7 +84,6 @@ public class CourseSelectDlg extends JDialog {
 		{
 			CourseNameCom.addItem(theCourse);
 		}
-		show();
 		setVisible(true);
 		return SelectedCourse;
 	}
@@ -96,7 +95,6 @@ public class CourseSelectDlg extends JDialog {
 		else
 			nCourseLevel = 1; // lowlevel course: 1
 		setVisible(false);
-		hide();
 	}
 
 	public boolean isLogout() {
@@ -106,6 +104,5 @@ public class CourseSelectDlg extends JDialog {
 	void buttonLogoutActionPerformed(ActionEvent e) {
 		m_bLogout = true;
 		setVisible(false);
-		hide();
 	}
 }
