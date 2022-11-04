@@ -29,7 +29,7 @@ class AssignmentTest {
         Assignment assignment = new Assignment();
         Date today = new Date();
         assignment.setDueDate(today);
-        assertEquals(false, assignment.isOverDue());
+        assertFalse(assignment.isOverDue());
     }
 
     @Test

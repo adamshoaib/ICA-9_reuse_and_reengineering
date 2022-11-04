@@ -56,7 +56,6 @@ class FacadeTest {
     @Test
     void GradeSolution() {
         Facade facade = new Facade();
-        Solution solution = new Solution();
         facade.gradeSolution();
     }
 }

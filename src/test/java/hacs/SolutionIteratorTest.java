@@ -38,7 +38,7 @@ class SolutionIteratorTest {
     void testNext() {
         SolutionList list = new SolutionList();
         SolutionIterator itr = new SolutionIterator(list);
-        assertEquals(null, itr.next());
+        assertNull(itr.next());
     }
 
     @Test
