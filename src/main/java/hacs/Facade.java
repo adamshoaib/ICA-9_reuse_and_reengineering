@@ -77,9 +77,9 @@ public class Facade {
 	 * this function will grade the give Solution: theSolution this function calls
 	 */
 
-	void gradeSolution(Solution theSolution) {
+	void gradeSolution() {
 		SolutionMenu solutionMenu = new SolutionMenu();
-		solutionMenu.ShowMenu(theSolution);
+		solutionMenu.ShowMenu();
 	}
 
 	void reportSolutions(Assignment theAssignment) {

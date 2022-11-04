@@ -16,9 +16,6 @@ import java.util.Iterator;
 public class ListIterator implements Iterator<Object> {
 	ArrayList<Object> theList;
 	int currentNumber = -1;
-	
-	public ListIterator() {
-	}
 
 	public ListIterator(ArrayList<Object> list) {
 		theList = list;

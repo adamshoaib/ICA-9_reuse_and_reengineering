@@ -100,7 +100,7 @@ public class Login extends JDialog {
 				this.setVisible(false);
 			}
 		} catch (Exception ee) {
-			System.out.println(ee);
+			System.out.println("Error :" +ee);
 			ee.printStackTrace();
 		}
 

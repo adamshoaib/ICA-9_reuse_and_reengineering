@@ -19,7 +19,7 @@ public class SolutionMenu extends JDialog {
 	public SolutionMenu() {
 	}
 
-	void ShowMenu(Solution theSolution) {
+	void ShowMenu() {
 		setVisible(true);
 	}
 }

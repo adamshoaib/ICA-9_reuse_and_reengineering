@@ -57,6 +57,6 @@ class FacadeTest {
     void GradeSolution() {
         Facade facade = new Facade();
         Solution solution = new Solution();
-        facade.gradeSolution(solution);
+        facade.gradeSolution();
     }
 }

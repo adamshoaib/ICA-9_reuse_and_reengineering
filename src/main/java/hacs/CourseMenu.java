@@ -18,11 +18,10 @@ abstract public class CourseMenu extends JDialog {
   Course theCourse;
   boolean bLogout = true;
   JRadioButton assignmentRadio = new JRadioButton();
-  JComboBox assignmentComboBox = new JComboBox();
+  JComboBox<Assignment> assignmentComboBox = new JComboBox<>();
   JButton assignmentViewButton = new JButton();
   JButton assignmentAddButton = new JButton();
   JRadioButton optionRadio = new JRadioButton();
-  JLabel assignmentContentLable = new JLabel();
   JComboBox optionCombo = new JComboBox();
   JButton optionViewButton = new JButton();
   JButton optionAddButton = new JButton();
@@ -65,12 +64,12 @@ abstract public class CourseMenu extends JDialog {
   abstract void showRadios();
   abstract void showComboxes();
 
-  void assignmentAddButtonActionPerformed(ActionEvent e) {
+  void assignmentAddButtonActionPerformed(ActionEvent ignoredE) {
     Hacs.theFacade.AddAssignment(theCourse);
     refresh();
   }
 
-  void assignmentViewButtonActionPerformed(ActionEvent e) {
+  void assignmentViewButtonActionPerformed(ActionEvent ignoredE) {
     Assignment theAssignment = (Assignment) assignmentComboBox.getSelectedItem() ;
     Hacs.theFacade.ViewAssignment(theAssignment);
   }

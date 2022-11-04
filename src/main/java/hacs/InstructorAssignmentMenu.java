@@ -17,7 +17,7 @@ import java.text.DateFormat;
 public class InstructorAssignmentMenu extends AssignmentMenu { ////  class AssignmentMenu
   private Solution theSolution;
   private Assignment theAssignment;
-  JComboBox combSolutionList = new JComboBox();
+  JComboBox<Solution> combSolutionList = new JComboBox<>();
 
   JTextField tbAssignmentName = new JTextField();
   JTextField tbDueDate = new JTextField();

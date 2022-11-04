@@ -11,8 +11,7 @@ import java.util.Iterator;
  * @version 1.0
  */
 
-public class CourseIterator implements Iterator
-{
+public class CourseIterator implements Iterator {
   ClassCourseList theCourseList;
   int currentCourseNumber = -1;
 

@@ -23,8 +23,7 @@ public class Hacs {
 		UserInfoItem userinfoitem = new UserInfoItem();
 		theFacade.createCourseList();
 		while (true) {
-			boolean bExit = false;
-			bExit =	theFacade.Login(userinfoitem);
+			boolean bExit =	Facade.Login(userinfoitem);
 			if (bExit)
 				break;
 			theFacade.createUser(userinfoitem);
