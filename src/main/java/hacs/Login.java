@@ -92,8 +92,8 @@ public class Login extends JDialog {
 			String LoginName = null;
 			String aline, UserName , Password ;
 			while ((aline = file.readLine()) != null) {
-				UserName = GetUserName(aline);
-				Password = GetPassword(aline);
+				UserName = getUserName(aline);
+				Password = getPassword(aline);
 				if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 					LoginName = UserName;
 			}
@@ -110,7 +110,7 @@ public class Login extends JDialog {
 	/*
 	 * get the user name from aline UserName:Password
 	 */
-	private String GetUserName(String aline) {
+	private String getUserName(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(0, Sep);
 	}
@@ -118,18 +118,18 @@ public class Login extends JDialog {
 	/*
 	 * get the password from aline UserName:Password
 	 */
-	private String GetPassword(String aline) {
+	private String getPassword(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(Sep + 1);
 	}
 
 	/* after login get the UserName of the login interface */
-	public String GetUserName() {
+	public String getUserName() {
 		return userBox;
 	}
 
 	/* after login get the userType of the login interface */
-	public USER_TYPE GetUserType() {
+	public USER_TYPE getUserType() {
 		return userType;
 	}
 
@@ -142,4 +142,3 @@ public class Login extends JDialog {
 		setVisible(false);
 	}
 }
-

@@ -13,11 +13,10 @@ import java.awt.event.*;
  * @version 1.0
  */
 
-abstract public class CourseMenu extends JDialog
-{
-  Course theCourse;
-  boolean bLogout=true;
+abstract public class CourseMenu extends JDialog {
 
+  Course theCourse;
+  boolean bLogout = true;
   JRadioButton assignmentRadio = new JRadioButton();
   JComboBox assignmentComboBox = new JComboBox();
   JButton assignmentViewButton = new JButton();
@@ -49,7 +48,7 @@ abstract public class CourseMenu extends JDialog
     this.setTitle("");
     buttonLogout.setText("Logout");
     buttonLogout.setBounds(new Rectangle(267, 215, 73, 37));
-    buttonLogout.addActionListener(this::buttonlogoutActionPerformed);
+    buttonLogout.addActionListener(this::buttonLogoutActionPerformed);
     this.getContentPane().add(buttonChangeCourse, null);
     this.getContentPane().add(buttonLogout, null);
   }
@@ -61,18 +60,21 @@ abstract public class CourseMenu extends JDialog
   /* when the add button is pressed, call ViewAssignment
   function of facade, after that refresh window
   */
-  abstract void ShowAddButtons();
+  abstract void showAddButtons();
   abstract void ShowViewButtons();
   abstract void showRadios();
   abstract void showComboxes();
+
   void assignmentAddButtonActionPerformed(ActionEvent e) {
     Hacs.theFacade.AddAssignment(theCourse);
     refresh();
   }
+
   void assignmentViewButtonActionPerformed(ActionEvent e) {
-    Assignment theAss = (Assignment) assignmentComboBox.getSelectedItem() ;
-    Hacs.theFacade.ViewAssignment(theAss);
+    Assignment theAssignment = (Assignment) assignmentComboBox.getSelectedItem() ;
+    Hacs.theFacade.ViewAssignment(theAssignment);
   }
+
   void refresh() {
     assignmentComboBox.removeAllItems() ;
     for (Assignment assignment : theCourse.assignmentList) {
@@ -85,10 +87,11 @@ abstract public class CourseMenu extends JDialog
     setVisible(false);
   }
 
-  void buttonlogoutActionPerformed(ActionEvent e) {
+  void buttonLogoutActionPerformed(ActionEvent e) {
     bLogout = true;
     setVisible(false);
   }
+
   boolean ifLogout()
   {
     return bLogout;

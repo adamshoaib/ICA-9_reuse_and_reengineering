@@ -31,9 +31,9 @@ public class Facade {
 		System.out.println("I am here login fn 2");
 		login.setVisible(true);
 		System.out.println("I am here login fn 3");
-		userinfoItem.strUserName = login.GetUserName();
+		userinfoItem.strUserName = login.getUserName();
 		System.out.println("I am here login fn 4");
-		userinfoItem.userType = login.GetUserType();
+		userinfoItem.userType = login.getUserType();
 		System.out.println("I am here login fn end");
 		return login.isExit();
 	}
@@ -47,7 +47,6 @@ public class Facade {
 	 * type of the user it will not update the course menu. the coursemenu need to
 	 * refreshed outside the function
 	 */
-
 	void AddAssignment(Course theCourse) {
 		AssignmentMenu theAssignmentMenu;
 		if (thePerson.type == 0) {
@@ -97,7 +96,6 @@ public class Facade {
 			theSolution = (Solution) theSolutionIterator.next();
 		}
 	}
-	////////////////////
 
 	//functions for StudentAssignmentMenu
 	void submitSolution(Assignment theAssignment, Solution theSolution) {
@@ -137,10 +135,10 @@ public class Facade {
 			file = new BufferedReader(new FileReader("/Users/adamshoaibk/IdeaProjects/hacs/src/main/java/hacs/UserCourse.txt"));
 			String aline, strUserName, strCourseName;
 			while ((aline = file.readLine()) != null) {
-				strUserName = GetUserName(aline);
-				strCourseName = GetCourseName(aline);
+				strUserName = getUserName(aline);
+				strCourseName = getCourseName(aline);
 				if (strUserName.compareTo(thePerson.userName) == 0) { /// the UserName mateches
-					theSelectedCourse = FindCourseByCourseName(strCourseName);
+					theSelectedCourse = findCourseByCourseName(strCourseName);
 					if (theSelectedCourse != null) { /// Find the Course in the CourseList--->attach
 						thePerson.addCourse(theSelectedCourse);
 					}
@@ -154,7 +152,7 @@ public class Facade {
 	/*
 	 * get the user name from aline UserName:CourseName
 	 */
-	private String GetUserName(String aline) {
+	private String getUserName(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(0, Sep);
 	}
@@ -162,7 +160,7 @@ public class Facade {
 	/*
 	 * get the CourseName from aline UserName:CourseName
 	 */
-	private String GetCourseName(String aline) {
+	private String getCourseName(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(Sep + 1);
 	}
@@ -173,7 +171,7 @@ public class Facade {
 	 * theSelecteCourse, the Course Level to CourseLevel CourseLeve=0 High,
 	 * CourseLeve=1 Low
 	 */
-	public boolean SelectCourse() {
+	public boolean selectCourse() {
 		CourseSelectDlg theDlg = new CourseSelectDlg();
 		theSelectedCourse = theDlg.ShowDlg(thePerson.courseList);
 		thePerson.currentCourse = theSelectedCourse;
@@ -187,7 +185,7 @@ public class Facade {
 	 * the menu;
 	 */
 
-	public boolean CourseOperation() {
+	public boolean courseOperation() {
 		thePerson.createCourseMenu(theSelectedCourse, nCourseLevel);
 		return thePerson.showMenu();//// 0: logout 1 select an other course
 	}
@@ -197,9 +195,8 @@ public class Facade {
 	 * CourseIterator for the List 2 Find the Course with the Iterator return the
 	 * pointer of the Course if not fine, return null;
 	 */
-	private Course FindCourseByCourseName(String strCourseName) {
+	private Course findCourseByCourseName(String strCourseName) {
 		CourseIterator Iterator = new CourseIterator(theCourseList);
 		return (Course) Iterator.next(strCourseName);
 	}
 }
-

@@ -11,8 +11,7 @@ import java.util.Iterator;
  * @version 1.0
  */
 
-public class SolutionIterator implements Iterator
-{
+public class SolutionIterator implements Iterator {
   SolutionList solutionlist;
 
   ///  CurrentSolutionNumber: point to the location before the first element
@@ -35,6 +34,7 @@ public class SolutionIterator implements Iterator
   public boolean hasNext() {
     return currentSolutionNumber < solutionlist.size() - 1;
   }
+
   public Object next() {
     if (hasNext()) {
       currentSolutionNumber++;

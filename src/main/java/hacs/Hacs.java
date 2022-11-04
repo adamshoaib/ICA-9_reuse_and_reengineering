@@ -34,12 +34,11 @@ public class Hacs {
 				theFacade.Remind();
 			boolean bLogout = false;
 			while (!bLogout) {
-				bLogout = theFacade.SelectCourse();
+				bLogout = theFacade.selectCourse();
 				if (bLogout)
 					break;
-				bLogout = theFacade.CourseOperation();
+				bLogout = theFacade.courseOperation();
 			}
 		}
 	}
 }
-

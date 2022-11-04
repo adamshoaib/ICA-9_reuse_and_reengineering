@@ -96,7 +96,6 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 			lGrade.setText(theSolution.getGradeString());
 
 		}
-
 		lAssignmentName.setText(assignment.assignmentName);
 		lDueDate.setText(assignment.dueDate.toString());
 		lSuggestedSolution.setText(assignment.suggestSolution.solutionFileName);
@@ -121,5 +120,4 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		boolSubmit = false;
 		setVisible(false);
 	}
-
 }

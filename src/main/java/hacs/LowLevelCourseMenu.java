@@ -21,7 +21,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 		setVisible(true);
 	}
 
-	void ShowAddButtons() {
+	void showAddButtons() {
 		assignmentAddButton.addActionListener(this::assignmentAddButtonActionPerformed);
 		assignmentAddButton.setText("Add");
 		assignmentAddButton.setBounds(new Rectangle(389, 54, 79, 29));

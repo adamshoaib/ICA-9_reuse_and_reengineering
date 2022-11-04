@@ -16,7 +16,7 @@ import java.util.*;
 
 public class Course {
   String courseName;
-  public ArrayList<Assignment> assignmentList=new ArrayList();
+  public ArrayList<Assignment> assignmentList = new ArrayList();
   int numOfAssignment;
   int courseLevel;
 
@@ -43,6 +43,4 @@ public class Course {
   {
     visitor.visitCourse(this);
   }
-
 }
-

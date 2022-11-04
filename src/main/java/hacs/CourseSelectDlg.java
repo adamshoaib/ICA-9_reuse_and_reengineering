@@ -11,8 +11,7 @@ import java.awt.event.*;
  * @version 1.0
  */
 
-public class CourseSelectDlg extends JDialog {
-	// 0 HighLevel presentation 1 LowLevel Experiment
+public class CourseSelectDlg extends JDialog { // 0 HighLevel presentation 1 LowLevel Experiment
 	ClassCourseList theCourseList;
 	Course SelectedCourse;
 	int nCourseLevel = 0;
@@ -48,7 +47,7 @@ public class CourseSelectDlg extends JDialog {
 		jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
 		OKButton.setText("OK");
 		OKButton.setBounds(new Rectangle(78, 139, 79, 29));
-		OKButton.addActionListener(this::OKButtonActionPerformed);
+		OKButton.addActionListener(this::okButtonactionperformed);
 		buttonLogout.setText("Logout");
 		buttonLogout.setBounds(new Rectangle(224, 140, 73, 31));
 		buttonLogout.addActionListener(this::buttonLogoutActionPerformed);
@@ -78,7 +77,7 @@ public class CourseSelectDlg extends JDialog {
 		return SelectedCourse;
 	}
 
-	void OKButtonActionPerformed(ActionEvent e) {
+	void okButtonactionperformed(ActionEvent e) {
 		SelectedCourse = (Course) CourseNameCom.getSelectedItem();
 		if (HighLevelRadio.isSelected())
 			nCourseLevel = 0; // highlevel course: 0

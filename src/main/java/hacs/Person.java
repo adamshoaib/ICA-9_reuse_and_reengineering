@@ -25,7 +25,7 @@ abstract public class Person {
 	abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
 
 	public void showAddButton() {
-		theCourseMenu.ShowAddButtons();
+		theCourseMenu.showAddButtons();
 	}
 
 	public void showViewButtons() {
