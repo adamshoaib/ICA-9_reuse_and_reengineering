@@ -28,18 +28,14 @@ public class SolutionGradingDlg extends JDialog {
 		}
 	}
 
-	private void jbInit() throws Exception {
+	private void jbInit() {
 		jLabel1.setText("Solution File Name");
 		jLabel1.setBounds(new Rectangle(23, 30, 121, 18));
 		this.getContentPane().setLayout(null);
 		tfGrad.setBounds(new Rectangle(25, 66, 100, 22));
 		buttonOK.setText("OK");
 		buttonOK.setBounds(new Rectangle(217, 67, 79, 29));
-		buttonOK.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				buttonOKActionPerformed(e);
-			}
-		});
+		buttonOK.addActionListener(this::buttonOKActionPerformed);
 		labelSolutionFileName.setBounds(new Rectangle(212, 34, 163, 18));
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(tfGrad, null);
@@ -50,7 +46,7 @@ public class SolutionGradingDlg extends JDialog {
 	void show(Solution solution) {
 		theSolution = solution;
 		tfGrad.setText("" + theSolution.getGradeInt());
-		labelSolutionFileName.setText(theSolution.SolutionFileName);
+		labelSolutionFileName.setText(theSolution.solutionFileName);
 		setVisible(true);
 	}
 
@@ -58,5 +54,4 @@ public class SolutionGradingDlg extends JDialog {
 		theSolution.theGrade = Integer.parseInt(tfGrad.getText());
 		setVisible(false);
 	}
-
 }

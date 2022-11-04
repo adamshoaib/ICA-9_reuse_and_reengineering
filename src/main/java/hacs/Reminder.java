@@ -12,7 +12,6 @@ import java.awt.event.*;
  */
 
 public class Reminder extends JDialog {
-	ClassCourseList CourseList;
 	JLabel jLabel1 = new JLabel();
 	JLabel jLabel2 = new JLabel();
 	java.awt.List listUpcoming = new java.awt.List();
@@ -29,7 +28,7 @@ public class Reminder extends JDialog {
 		}
 	}
 
-	private void jbInit() throws Exception {
+	private void jbInit() {
 		jLabel1.setText("Upcoming assignments");
 		jLabel1.setBounds(new Rectangle(38, 40, 159, 17));
 		this.getContentPane().setLayout(null);
@@ -39,11 +38,7 @@ public class Reminder extends JDialog {
 		listOverdue.setBounds(new Rectangle(31, 187, 337, 85));
 		buttonOK.setLabel("OK");
 		buttonOK.setBounds(new Rectangle(149, 308, 67, 37));
-		buttonOK.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				buttonOKActionPerformed(e);
-			}
-		});
+		buttonOK.addActionListener(this::buttonOKActionPerformed);
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(listUpcoming, null);
@@ -51,8 +46,7 @@ public class Reminder extends JDialog {
 		this.getContentPane().add(buttonOK, null);
 	}
 
-	void showReminder(ClassCourseList courseList) {
-		Assignment assignment;
+	void showReminder() {
 		ReminderVisitor visitor = new ReminderVisitor(this);
 		visitor.visitFacade(Hacs.theFacade);
 		setVisible(true);

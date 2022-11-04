@@ -17,32 +17,28 @@ public class ClassCourseList extends ArrayList<Course> {
 	public ClassCourseList() {
 	}
 
-	//// initialize the list by reading from the file.
-	void InitializeFromFile(String theFileName) {
+	void initializeFromFile() {
 		try {
 			BufferedReader file;
-			String strCourseName = null;
+			String strCourseName;
 			file = new BufferedReader(new FileReader("/Users/adamshoaibk/IdeaProjects/hacs/src/main/java/hacs/CourseInfo.txt"));
 			while ((strCourseName = file.readLine()) != null) {
 				Course theCourse;
 				theCourse = new Course(strCourseName, 0);
-//      theCourse.CourseName= strCourseName;
 				add(theCourse);
 			}
 		} catch (Exception ee) {
-			;
+			System.out.println("Exception Occured while reading File"+ee);
 		}
 	}
 
-	Course FindCourseByCourseName(String CourseName) {
-		int nCourseCount = size();
-		for (int i = 0; i < nCourseCount; i++) {
+	Course findCourseByCourseName(String CourseName) {
+		for (Course course : this) {
 			Course theCourse;
-			theCourse = (Course) get(i);
-			if (theCourse.CourseName.compareTo(CourseName) == 0)
+			theCourse = course;
+			if (theCourse.courseName.compareTo(CourseName) == 0)
 				return theCourse;
 		}
 		return null;
 	}
-
 }

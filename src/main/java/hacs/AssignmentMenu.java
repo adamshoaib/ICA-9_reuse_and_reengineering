@@ -1,9 +1,6 @@
 package hacs;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
 
 
 /**
@@ -17,9 +14,8 @@ import java.io.*;
 
 abstract public class AssignmentMenu extends JDialog
 {
-  abstract void ShowMenu(Assignment ass,Person per);
-  public AssignmentMenu()
-  {
+  abstract void showMenu(Assignment assignment, Person person);
+  public AssignmentMenu() {
     setModal(true);
     setSize(575,330);
   }

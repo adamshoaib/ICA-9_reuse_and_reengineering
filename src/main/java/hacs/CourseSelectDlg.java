@@ -35,7 +35,7 @@ public class CourseSelectDlg extends JDialog {
 		}
 	}
 
-	private void jbInit() throws Exception {
+	private void jbInit() {
 		this.getContentPane().setLayout(null);
 		CourseNameCom.setBounds(new Rectangle(155, 41, 203, 22));
 		HighLevelRadio.setText("HighLevel");
@@ -48,18 +48,10 @@ public class CourseSelectDlg extends JDialog {
 		jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
 		OKButton.setText("OK");
 		OKButton.setBounds(new Rectangle(78, 139, 79, 29));
-		OKButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				OKButtonActionPerformed(e);
-			}
-		});
+		OKButton.addActionListener(this::OKButtonActionPerformed);
 		buttonLogout.setText("Logout");
 		buttonLogout.setBounds(new Rectangle(224, 140, 73, 31));
-		buttonLogout.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				buttonLogoutActionPerformed(e);
-			}
-		});
+		buttonLogout.addActionListener(this::buttonLogoutActionPerformed);
 		this.getContentPane().add(CourseNameCom, null);
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(HighLevelRadio, null);
@@ -76,12 +68,10 @@ public class CourseSelectDlg extends JDialog {
 	 */
 
 	public Course ShowDlg(ClassCourseList courseList) {
-
 		theCourseList = courseList;
 		CourseIterator theIterator = new CourseIterator(theCourseList);
 		Course theCourse;
-		while ((theCourse = (Course) theIterator.next()) != null) /// end of the list
-		{
+		while ((theCourse = (Course) theIterator.next()) != null) {
 			CourseNameCom.addItem(theCourse);
 		}
 		setVisible(true);

@@ -10,9 +10,7 @@ package hacs;
 abstract public class NodeVisitor {
 
 	public NodeVisitor() {
-	}
-
-	public NodeVisitor(Object visitee) {
+		System.out.println("Inside NodeVisitor Class");
 	}
 
 	abstract public void visitFacade(Facade facade);

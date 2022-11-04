@@ -14,81 +14,58 @@ import java.text.DateFormat;
 
 public class Assignment {
 
-  protected String AssName;
-  protected String strAssignmentFilename;
-  protected Date DueDate=new Date();
-  protected String AssSpec;
-  protected SolutionList theSolutionList=new SolutionList();
-  protected Solution SuggestSolution=new Solution();
-
-
+  protected String assignmentName;
+  protected Date dueDate = new Date();
+  protected String assignmentSpecifications;
+  protected SolutionList theSolutionList = new SolutionList();
+  protected Solution suggestSolution = new Solution();
 
   public Assignment() {
   }
 
-  public void SetDueDate(Date theDueDate){
-    this.DueDate = theDueDate;
+  public void setDueDate(Date theDueDate){
+    this.dueDate = theDueDate;
   }
 
-  public void SetAssSpec(String theSpec){
-    this.AssSpec = theSpec;
+  public void setAssignmentSpecifications(String theSpec){
+    this.assignmentSpecifications = theSpec;
   }
 
-  public boolean IsOverDue(){
-    Date today;
-    today = new Date();
-    if (today.after(this.DueDate)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  public Solution AddSolution(){
-    Solution mySolution = new Solution();
-    return mySolution;
+  public boolean isOverDue() {
+    Date today = new Date();
+    return today.after(this.dueDate);
   }
 
   ////add the theSolution to the Solutionlist
-  public void AddSolution(Solution theSolution)
+  public void addSolution(Solution theSolution)
   {
     theSolutionList.add(theSolution);
   }
 
-  public void SubmitSolution(){
+  public boolean submitSolution() {
+    System.out.println("Dummy submitting");
+    return true;
   }
 
-  public void getSolutionList(){
-  }
-
-  /* return the solution of the give name
-  */
-  public Solution getSolution(String studentname)
-  {
-    SolutionIterator Iterator=(SolutionIterator)theSolutionList.iterator();
-    return (Solution)Iterator.next(studentname);
+  public SolutionList getSolutionList() {
+    return theSolutionList;
   }
 
   public Solution getSugSolution(){
-    return SuggestSolution;
+    return suggestSolution;
   }
 
-  public SolutionIterator GetSolutionIterator()
-  {
-    SolutionIterator theSolutionIterator=new SolutionIterator(theSolutionList);
-    return theSolutionIterator;
+  public SolutionIterator getSolutionIterator() {
+    return new SolutionIterator(theSolutionList);
   }
 
   public String toString()
   {
-    return AssName;
+    return assignmentName;
   }
 
-  public String getDueDateString()
-  {
-    DateFormat dateFormat=DateFormat.getDateInstance(DateFormat.SHORT);
-    return  dateFormat.format(DueDate);
+  public String getDueDateString() {
+    return DateFormat.getDateInstance(DateFormat.SHORT).format(dueDate);
   }
 
   public void accept(NodeVisitor visitor)

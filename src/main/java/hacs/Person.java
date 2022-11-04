@@ -13,17 +13,16 @@ import java.util.*;
 
 abstract public class Person {
 	int type = 0; // type=0 : student, type=1 instructor
-	String UserName;
-	ClassCourseList CourseList;
+	String userName;
+	ClassCourseList courseList;
 	CourseMenu theCourseMenu;
-	Course CurrentCourse;
-	Assignment CurrentAssignment;
+	Course currentCourse;
 
 	public Person() {
-		CourseList = new ClassCourseList();
+		courseList = new ClassCourseList();
 	}
 
-	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
+	abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
 
 	public void showAddButton() {
 		theCourseMenu.ShowAddButtons();
@@ -34,13 +33,14 @@ abstract public class Person {
 	}
 
 	public void showComboxes() {
-		theCourseMenu.ShowComboxes();
+		theCourseMenu.showComboxes();
 	}
 
 	public void showRadios() {
-		theCourseMenu.ShowRadios();
+		theCourseMenu.showRadios();
 	}
 
+	// show course Menu
 	public void show() {
 		theCourseMenu.setVisible(true);
 	}
@@ -50,24 +50,21 @@ abstract public class Person {
 	}
 
 	// show the assignment list
-	public boolean ShowMenu() {
+	public boolean showMenu() {
 		// create a iterator for the assignment list
-//    Iterator theIter=new ListIterator(CurrentCourse.AssList );
-		Iterator theIter = CurrentCourse.assignmentList.iterator();
-		theCourseMenu.theCourse = CurrentCourse;
+		// Iterator theIter=new ListIterator(CurrentCourse.AssList );
+		Iterator<Assignment> iterator = currentCourse.assignmentList.iterator();
+		theCourseMenu.theCourse = currentCourse;
 		Assignment theAssignment;
-		while (theIter.hasNext()) {
-			theAssignment = (Assignment) theIter.next();
-			theCourseMenu.AssignmentCombox.addItem(theAssignment);
+		while (iterator.hasNext()) {
+			theAssignment = iterator.next();
+			theCourseMenu.assignmentComboBox.addItem(theAssignment);
 		}
 		return false;
 	}
 
-	public ClassCourseList GetCourseList() {
-		return CourseList;
-	}
-
-	public void AddCourse(Course theCourse) {
-		CourseList.add(theCourse);
+	// add course to the courseList
+	public void addCourse(Course theCourse) {
+		courseList.add(theCourse);
 	}
 }
