@@ -1,6 +1,8 @@
 package hacs;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu

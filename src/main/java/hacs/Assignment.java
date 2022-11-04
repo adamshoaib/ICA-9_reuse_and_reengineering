@@ -9,8 +9,8 @@ package hacs;
  * @version 1.0
  */
 
-import java.util.*;
 import java.text.DateFormat;
+import java.util.Date;
 
 public class Assignment {
 

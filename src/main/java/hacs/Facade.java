@@ -1,6 +1,8 @@
 package hacs;
 
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
@@ -89,6 +91,7 @@ public class Facade {
 			theSolution.setReported(true);
 			theSolution = (Solution) theSolutionIterator.next();
 		}
+		System.out.println("Reported");
 	}
 
 	//functions for StudentAssignmentMenu

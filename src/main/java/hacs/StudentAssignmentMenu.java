@@ -3,7 +3,7 @@ package hacs;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.util.Date;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu

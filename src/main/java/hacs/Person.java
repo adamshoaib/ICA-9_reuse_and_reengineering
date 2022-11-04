@@ -1,6 +1,7 @@
 package hacs;
 
-import java.util.*;
+
+import java.util.Iterator;
 
 /**
  * Title: HACS Description: CSE870 Homework 3: Implementing Design Patterns

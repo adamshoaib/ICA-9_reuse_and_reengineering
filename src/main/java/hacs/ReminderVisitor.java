@@ -1,6 +1,7 @@
 package hacs;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
