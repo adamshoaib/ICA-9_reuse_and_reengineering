@@ -24,7 +24,6 @@ public class Hacs {
 		theFacade.createCourseList();
 		while (true) {
 			boolean bExit = false;
-			System.out.println("I am here going in ");
 			bExit =	theFacade.Login(userinfoitem);
 			if (bExit)
 				break;

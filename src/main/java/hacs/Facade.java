@@ -24,17 +24,11 @@ public class Facade {
 	}
 
 	static public boolean Login(UserInfoItem userinfoItem) {
-		System.out.println("I am here login fn start");
 		Login login = new Login();
-		System.out.println("I am here login fn 1");
 		login.setModal(true);
-		System.out.println("I am here login fn 2");
 		login.setVisible(true);
-		System.out.println("I am here login fn 3");
 		userinfoItem.strUserName = login.getUserName();
-		System.out.println("I am here login fn 4");
 		userinfoItem.userType = login.getUserType();
-		System.out.println("I am here login fn end");
 		return login.isExit();
 	}
 
